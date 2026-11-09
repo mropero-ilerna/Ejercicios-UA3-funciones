@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ejercicio 5 · Devolver un valor con return</title>
+<link rel="stylesheet" href="../css/tailwind.css">
+</head>
+<body class="min-h-screen bg-slate-100 font-sans text-lg text-ink antialiased">
+<header class="bg-code text-white">
+<div class="mx-auto max-w-6xl px-5 pb-10 pt-6">
+<a href="../index.html" class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-bold text-white no-underline transition hover:bg-white/20">← Índice</a>
+<div class="mt-6 flex flex-wrap items-center gap-2 text-sm font-bold">
+<span class="rounded-full bg-lime px-3 py-1 text-code">Ejercicio 5</span>
+<span class="rounded-full px-3 py-1 ring-1 bg-amber-100 text-amber-800 ring-amber-300">Medio</span>
+<span class="rounded-full bg-white/10 px-3 py-1 text-slate-200">diapositivas 14 a 17</span>
+</div>
+<h1 class="mt-4 font-serif text-4xl font-bold leading-tight sm:text-5xl">Devolver un valor con return</h1>
+</div>
+</header>
+<main class="mx-auto grid max-w-6xl gap-6 px-5 py-8 lg:grid-cols-5">
+<section class="space-y-5 lg:col-span-3">
+<article class="rounded-2xl border-l-8 border-olive bg-white p-6 shadow-sm">
+<h2 class="mb-3 text-sm font-bold uppercase tracking-widest text-olive">Enunciado</h2>
+<div class="whitespace-pre-wrap font-sans text-base leading-7">1) calcularTotal(precio, iva = 21): devuelve el precio con el IVA incluido.
+2) esMayorDeEdad(edad): devuelve true si edad &gt;= 18 y false si no
+   (con varios return).
+3) obtenerMayor(a, b, c): devuelve el mayor de tres números.
+4) sinReturn(a, b): hace a + b pero NO lo devuelve.
+
+Muestra por consola, en este orden: calcularTotal(100), esMayorDeEdad(20),
+esMayorDeEdad(15), obtenerMayor(4, 9, 2) y sinReturn(2, 3).</div>
+</article>
+<div class="rounded-2xl bg-code p-5 shadow-sm"><p class="mb-2 text-xs font-bold uppercase tracking-widest text-lime">Resultado esperado</p><pre class="overflow-x-auto font-mono text-sm leading-relaxed text-slate-100">121
+true
+false
+9
+undefined</pre></div>
+<aside class="flex gap-4 rounded-2xl bg-panel p-5 text-base">
+<span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-olive text-xl font-bold text-white">✎</span>
+<p class="leading-relaxed text-slate-700"><b class="text-ink">Cómo trabajar:</b> abre <code class="rounded bg-white px-1.5 py-0.5 font-mono text-sm text-olive">js/ejercicio-05-return.js</code> en tu editor, escribe tu código debajo de «TU CÓDIGO», guarda y recarga esta página.</p>
+</aside>
+</section>
+<section class="space-y-5 lg:col-span-2 lg:sticky lg:top-6 lg:self-start">
+<div class="overflow-hidden rounded-2xl bg-code shadow-lg">
+<div class="flex items-center gap-2 bg-black/30 px-4 py-2.5"><span class="h-3 w-3 rounded-full bg-rose-400"></span><span class="h-3 w-3 rounded-full bg-amber-300"></span><span class="h-3 w-3 rounded-full bg-emerald-400"></span><span class="ml-3 font-mono text-xs uppercase tracking-widest text-slate-400">Salida</span></div>
+<div id="salida" aria-live="polite" class="max-h-96 min-h-24 overflow-auto px-4 py-3 font-mono text-sm leading-6"></div>
+</div>
+<div class="rounded-2xl bg-white p-5 shadow-sm">
+<div class="mb-3 flex items-center justify-between"><h2 class="text-sm font-bold uppercase tracking-widest text-olive">Comprobaciones</h2></div>
+<div class="h-2.5 overflow-hidden rounded-full bg-slate-200"><div id="barra" class="h-full w-0 rounded-full bg-olive"></div></div>
+<p id="resumen" class="mb-4 mt-2 text-sm font-bold"></p>
+<div id="comprobaciones" class="space-y-2"></div>
+</div>
+</section>
+</main>
+<script src="../js/salida.js"></script>
+<script src="../js/ejercicio-05-return.js"></script>
+<script>
+// ===== COMPROBACIONES (no las toques) =====
+probar('calcularTotal(100) = 121 y calcularTotal(100, 10) = 110', function () { return Math.abs(calcularTotal(100) - 121) < 0.001 && Math.abs(calcularTotal(100, 10) - 110) < 0.001; });
+probar('esMayorDeEdad devuelve true con 18 y false con 17', function () { return esMayorDeEdad(18) === true && esMayorDeEdad(17) === false; });
+probar('obtenerMayor(4, 9, 2) = 9; (1, 2, 3) = 3; (7, 1, 5) = 7', function () { return obtenerMayor(4, 9, 2) === 9 && obtenerMayor(1, 2, 3) === 3 && obtenerMayor(7, 1, 5) === 7; });
+probar('sinReturn(2, 3) devuelve undefined', function () { return sinReturn(2, 3) === undefined; });
+probar('La Salida sigue el orden esperado', function () { return logContiene('121', 'true', 'false', '9', 'undefined'); });
+
+resumen();
+</script>
+</body>
+</html>

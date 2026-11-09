@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ejercicio 4 · Valores por defecto</title>
+<link rel="stylesheet" href="../css/tailwind.css">
+</head>
+<body class="min-h-screen bg-slate-100 font-sans text-lg text-ink antialiased">
+<header class="bg-code text-white">
+<div class="mx-auto max-w-6xl px-5 pb-10 pt-6">
+<a href="../index.html" class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-bold text-white no-underline transition hover:bg-white/20">← Índice</a>
+<div class="mt-6 flex flex-wrap items-center gap-2 text-sm font-bold">
+<span class="rounded-full bg-lime px-3 py-1 text-code">Ejercicio 4</span>
+<span class="rounded-full px-3 py-1 ring-1 bg-emerald-100 text-emerald-800 ring-emerald-300">Fácil</span>
+<span class="rounded-full bg-white/10 px-3 py-1 text-slate-200">diapositivas 12 y 13</span>
+</div>
+<h1 class="mt-4 font-serif text-4xl font-bold leading-tight sm:text-5xl">Valores por defecto</h1>
+</div>
+</header>
+<main class="mx-auto grid max-w-6xl gap-6 px-5 py-8 lg:grid-cols-5">
+<section class="space-y-5 lg:col-span-3">
+<article class="rounded-2xl border-l-8 border-olive bg-white p-6 shadow-sm">
+<h2 class="mb-3 text-sm font-bold uppercase tracking-widest text-olive">Enunciado</h2>
+<div class="whitespace-pre-wrap font-sans text-base leading-7">1) Crea saludar(nombre, saludo = &quot;Hola&quot;) que DEVUELVA &quot;&lt;saludo&gt;, &lt;nombre&gt;&quot;.
+   Muestra por consola saludar(&quot;Ana&quot;) y saludar(&quot;Ana&quot;, &quot;Buenas&quot;).
+
+2) Crea potencia(base, exponente = 2) que devuelva base elevada a exponente
+   (operador **). Muestra potencia(5) y potencia(2, 10).
+
+3) Crea obtenerColorPorDefecto(): escribe por consola &quot;calculando color...&quot; y
+   devuelve &quot;negro&quot;. Crea crearEtiqueta(texto, color = obtenerColorPorDefecto())
+   que devuelva &quot;&lt;texto&gt; - &lt;color&gt;&quot;. Debe calcular el color SOLO cuando no se
+   pasa el segundo argumento. Llama a crearEtiqueta(&quot;Hola&quot;) y
+   crearEtiqueta(&quot;Hola&quot;, &quot;rojo&quot;) mostrando el resultado.</div>
+</article>
+<div class="rounded-2xl bg-code p-5 shadow-sm"><p class="mb-2 text-xs font-bold uppercase tracking-widest text-lime">Resultado esperado</p><pre class="overflow-x-auto font-mono text-sm leading-relaxed text-slate-100">Hola, Ana
+Buenas, Ana
+25
+1024
+calculando color...
+Hola - negro
+Hola - rojo</pre></div>
+<aside class="flex gap-4 rounded-2xl bg-panel p-5 text-base">
+<span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-olive text-xl font-bold text-white">✎</span>
+<p class="leading-relaxed text-slate-700"><b class="text-ink">Cómo trabajar:</b> abre <code class="rounded bg-white px-1.5 py-0.5 font-mono text-sm text-olive">js/ejercicio-04-valores-por-defecto.js</code> en tu editor, escribe tu código debajo de «TU CÓDIGO», guarda y recarga esta página.</p>
+</aside>
+</section>
+<section class="space-y-5 lg:col-span-2 lg:sticky lg:top-6 lg:self-start">
+<div class="overflow-hidden rounded-2xl bg-code shadow-lg">
+<div class="flex items-center gap-2 bg-black/30 px-4 py-2.5"><span class="h-3 w-3 rounded-full bg-rose-400"></span><span class="h-3 w-3 rounded-full bg-amber-300"></span><span class="h-3 w-3 rounded-full bg-emerald-400"></span><span class="ml-3 font-mono text-xs uppercase tracking-widest text-slate-400">Salida</span></div>
+<div id="salida" aria-live="polite" class="max-h-96 min-h-24 overflow-auto px-4 py-3 font-mono text-sm leading-6"></div>
+</div>
+<div class="rounded-2xl bg-white p-5 shadow-sm">
+<div class="mb-3 flex items-center justify-between"><h2 class="text-sm font-bold uppercase tracking-widest text-olive">Comprobaciones</h2></div>
+<div class="h-2.5 overflow-hidden rounded-full bg-slate-200"><div id="barra" class="h-full w-0 rounded-full bg-olive"></div></div>
+<p id="resumen" class="mb-4 mt-2 text-sm font-bold"></p>
+<div id="comprobaciones" class="space-y-2"></div>
+</div>
+</section>
+</main>
+<script src="../js/salida.js"></script>
+<script src="../js/ejercicio-04-valores-por-defecto.js"></script>
+<script>
+// ===== COMPROBACIONES (no las toques) =====
+probar('saludar("Ana") devuelve "Hola, Ana"', function () { return saludar('Ana') === 'Hola, Ana'; });
+probar('saludar("Ana", "Buenas") devuelve "Buenas, Ana"', function () { return saludar('Ana', 'Buenas') === 'Buenas, Ana'; });
+probar('potencia(5) = 25 y potencia(2, 10) = 1024', function () { return potencia(5) === 25 && potencia(2, 10) === 1024; });
+probar('crearEtiqueta("Hola") devuelve "Hola - negro" y calcula el color', function () { var v; var l = capturar(function () { v = crearEtiqueta('Hola'); }).log; return v === 'Hola - negro' && l.indexOf('calculando color...') !== -1; });
+probar('crearEtiqueta("Hola", "rojo") NO calcula el color', function () { var v; var l = capturar(function () { v = crearEtiqueta('Hola', 'rojo'); }).log; return v === 'Hola - rojo' && l.length === 0; });
+probar('La Salida sigue el orden esperado', function () { return logContiene('Hola, Ana', 'Buenas, Ana', '25', '1024', 'calculando color...', 'Hola - negro', 'Hola - rojo'); });
+
+resumen();
+</script>
+</body>
+</html>

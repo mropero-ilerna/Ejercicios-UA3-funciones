@@ -1,0 +1,12 @@
+EJERCICIOS UA3 · JavaScript. Funciones y patrones de diseño
+
+1. Abre index.html en el navegador (doble clic).
+2. Elige un ejercicio y lee el enunciado.
+3. Abre el fichero .js que se indica (carpeta js/) en tu editor y escribe tu
+   código debajo de "TU CÓDIGO". El enunciado también está en un comentario
+   al principio del fichero.
+4. Guarda y recarga la página del ejercicio: verás la Salida de tu programa
+   y las comprobaciones automáticas.
+
+Ejercicios 1 a 10: funciones. Ejercicios 11 a 13: patrones de diseño
+(Strategy, Template Method y Factory Method).
