@@ -29,4 +29,18 @@
 
 // ===== TU CÓDIGO =====
 
+function presentar(nombre, ciudad) {
+  console.log(`Me llamo ${nombre} y vivo en ${ciudad}.`);
+}
 
+presentar("Ana", "Sevilla");
+presentar("Luis", "Málaga");
+
+function cambiarNombre(nombre) {
+  nombre = nombre.toUpperCase();
+  console.log(nombre);
+}
+
+let nombre = "Ana";
+cambiarNombre(nombre);
+console.log(nombre);
