@@ -28,4 +28,27 @@
 
 // ===== TU CÓDIGO =====
 
+function calcularTotal(precio, iva = 21) {
+  return precio + precio * (iva / 100);
+}
 
+function esMayorDeEdad(edad) {
+  if (edad >= 18) {
+    return true;
+  }
+  return false;
+}
+
+function obtenerMayor(a, b, c) {
+  return Math.max(a, b, c);
+}
+
+function sinReturn(a, b) {
+  a + b;
+}
+
+console.log(calcularTotal(100));
+console.log(esMayorDeEdad(20));
+console.log(esMayorDeEdad(15));
+console.log(obtenerMayor(4, 9, 2));
+console.log(sinReturn(2, 3));
