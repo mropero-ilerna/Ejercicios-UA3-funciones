@@ -27,12 +27,20 @@
  */
 
 // ===== TU CÓDIGO =====
-function datos(a, b) { return a * b; }
-function x(n) { return n % 2 === 0; }
-function nombre(n) { return { nombre: n, creado: true }; }
-function hacer(lista) {
+function calcularProducto(a, b) { return a * b; }
+function esPar(n) { return n % 2 === 0; }
+function crearUsuario(n) { return { nombre: n, creado: true }; }
+function calcularSuma(lista) {
   let total = 0;
   for (const n of lista) total += n;
+  return total;
+}
+function mostrarTotal(total) {
   console.log("El total es " + total);
 }
-hacer([1, 2, 3]);
+function mostrarSumaDeLista(lista) {
+  const total = calcularSuma(lista);
+  mostrarTotal(total);
+}
+
+mostrarSumaDeLista([1, 2, 3]);
