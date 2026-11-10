@@ -33,4 +33,26 @@
 
 // ===== TU CÓDIGO =====
 
+function saludar(nombre, saludo = "Hola") {
+  return `${saludo}, ${nombre}`;
+}
 
+function potencia(base, exponente = 2) {
+  return base ** exponente;
+}
+
+function obtenerColorPorDefecto() {
+  console.log("calculando color...");
+  return "negro";
+}
+
+function crearEtiqueta(texto, color = obtenerColorPorDefecto()) {
+  return `${texto} - ${color}`;
+}
+
+console.log(saludar("Ana"));
+console.log(saludar("Ana", "Buenas"));
+console.log(potencia(5));
+console.log(potencia(2, 10));
+console.log(crearEtiqueta("Hola"));
+console.log(crearEtiqueta("Hola", "rojo"));
