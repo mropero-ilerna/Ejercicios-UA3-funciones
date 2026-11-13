@@ -31,5 +31,29 @@
  */
 
 // ===== TU CÓDIGO =====
+function sinDescuento(precio) {
+  return precio;
+}
 
+function descuentoVip(precio) {
+  return precio * 0.8;
+}
+
+function descuentoBlackFriday(precio) {
+  return precio * 0.5;
+}
+
+function calcularPrecioFinal(precio, estrategia) {
+  if (typeof estrategia !== "function") {
+    console.log("Estrategia no válida");
+    return undefined;
+  }
+
+  return estrategia(precio);
+}
+
+console.log(calcularPrecioFinal(200, sinDescuento));
+console.log(calcularPrecioFinal(200, descuentoVip));
+console.log(calcularPrecioFinal(200, descuentoBlackFriday));
+calcularPrecioFinal(200, "vip");
 
