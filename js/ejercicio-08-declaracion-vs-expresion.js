@@ -27,7 +27,10 @@ saludar("Ana");
 despedir("Ana");
 
 function saludar(nombre) { console.log("Hola, " + nombre); }
-const despedir = function (nombre) { console.log("Adiós, " + nombre); };
+function despedir(nombre) { console.log("Adiós, " + nombre); }
 
-// a) ...
-// b) ...
+// a) saludar funciona antes de su definición porque las declaraciones de función
+//    se elevan y quedan disponibles al empezar a ejecutarse su ámbito.
+// b) La declaración de función queda creada y disponible al entrar en su ámbito,
+//    antes de ejecutar el código. La expresión de función se crea cuando se
+//    ejecuta la línea que la asigna; antes, una variable const sigue sin inicializar.
