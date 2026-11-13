@@ -29,5 +29,30 @@
  */
 
 // ===== TU CÓDIGO =====
+function calcularSubtotal(precios) {
+  return precios.reduce((subtotal, precio) => subtotal + precio, 0);
+}
 
+function calcularDescuento(subtotal, porcentaje = 10) {
+  return subtotal * porcentaje / 100;
+}
+
+function calcularTotal(subtotal, descuento, iva = 21) {
+  return (subtotal - descuento) * (1 + iva / 100);
+}
+
+function mostrarResumen(subtotal, descuento, total) {
+  console.log("Subtotal: " + subtotal);
+  console.log("Descuento: " + descuento);
+  console.log("Total: " + total.toFixed(2));
+}
+
+const procesarPedido = precios => {
+  const subtotal = calcularSubtotal(precios);
+  const descuento = calcularDescuento(subtotal);
+  const total = calcularTotal(subtotal, descuento);
+  mostrarResumen(subtotal, descuento, total);
+};
+
+procesarPedido([20, 30, 50]);
 
