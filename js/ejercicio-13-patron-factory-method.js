@@ -35,5 +35,33 @@
  */
 
 // ===== TU CÓDIGO =====
+function crearOperacion(tipo) {
+  switch (tipo) {
+    case "doble":
+      return numero => numero * 2;
+    case "cuadrado":
+      return numero => numero * numero;
+    case "mitad":
+      return numero => numero / 2;
+    default:
+      return numero => numero;
+  }
+}
 
+function crearSaludador(idioma) {
+  const saludos = {
+    es: "Hola",
+    en: "Hello",
+    fr: "Bonjour"
+  };
+  const saludo = saludos[idioma] || "Hi";
+
+  return nombre => saludo + ", " + nombre;
+}
+
+console.log(crearOperacion("doble")(5));
+console.log(crearOperacion("cuadrado")(6));
+console.log(crearOperacion("mitad")(9));
+console.log(crearOperacion("raro")(7));
+console.log(crearSaludador("fr")("Ana"));
 
